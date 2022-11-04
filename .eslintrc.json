@@ -1,0 +1,45 @@
+{
+    "env": {
+        "node": true,
+        "commonjs": true,
+        "browser": true,
+        "es6": true,
+        "jest": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "prettier",
+        "plugin:storybook/recommended"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true,
+            "modules": true,
+            "experimentalObjectRestSpread": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": ["react", "react-hooks"],
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
+    "rules": {
+        "react/react-in-jsx-scope": "off"
+    },
+    "overrides": [
+        {
+            "files": ["**/*.stories.*"],
+            "rules": {
+                "storybook/hierarchy-separator": "error",
+                "import/no-anonymous-default-export": "off",
+                "react/jsx-uses-react": "error",
+                "react/jsx-uses-vars": "error",
+                "storybook/default-exports": "off"
+            }
+        }
+    ]
+}
